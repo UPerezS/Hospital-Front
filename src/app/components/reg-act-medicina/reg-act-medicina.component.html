@@ -1,0 +1,44 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card-body">
+                <span class="titulo text-center"> <h4> {{ titulo | uppercase }} </h4> </span>
+                <br>
+                <form class="mt-3" [formGroup]="medicinaForm" (ngSubmit)="registrarMedicina()">
+                    <div class="mb-3">
+                        <label for="nombreMedicina" class="form-label" style="font-weight: bold;">Nombre del Medicamento:</label>
+                        <input type="text" formControlName="nombreMedicina" class="form-control form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="categoria" class="form-label" style="font-weight: bold;">Categoría del Medicamento:</label>
+                        <select formControlName="categoria" class="form-control form-control">
+                            <option value="Analgesicos">Analgésicos</option>
+                            <option value="Antibioticos">Antibióticos</option>
+                            <option value="Antiinflamatorios">Antiinflamatorios</option>
+                            <option value="Antipireticos">Antipiréticos</option>
+                            <option value="Antidepresivos">Antidepresivos</option>
+                        </select>
+                    </div>                    
+                    <div class="mb-3">
+                        <label for="cantidad" class="form-label" style="font-weight: bold;">Cantidad Medicamentos:</label>
+                        <input type="number" formControlName="cantidad" class="form-control form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="viaAdministracion" class="form-label" style="font-weight: bold;">Via de Administracion:</label>
+                        <select formControlName="viaAdministracion" class="form-control form-control">
+                            <option value="oral">Oral</option>
+                            <option value="intravenosa">Intravenosa</option>
+                            <option value="Topica">Tópica</option>
+                            <option value="Inhalada">Inhalada</option>
+                            <option value="intramuscular">Intramuscular</option>
+                        </select>
+                    </div>                    
+                    <div>
+                        <button type="submit" class="btn btn-success float-end">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
